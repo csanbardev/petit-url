@@ -1,5 +1,6 @@
 import express from "express";
 import cors from 'cors'
+import urlRoutes from './routes/urls.routes.js'
 
 const app = express()
 
@@ -12,7 +13,7 @@ app.use((req, res, next) => {
 })
 
 // ROUTES
-
+app.use(urlRoutes)
 app.use((req, res, next) => {
   res.status(404).json({
     message: 'endpoint not found'
